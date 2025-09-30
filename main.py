@@ -1,5 +1,6 @@
 import asyncio
 import random
+import os
 import discord
 from discord.ext import commands
 
@@ -126,4 +127,4 @@ async def delete_chanz(guild):
     await asyncio.gather(*tasks)
     await ctx.send(f"✅ Visual impact done across {len(all_channels)} channels safely!")
   # ----------------- Run Bot ----------------- #
-bot.run("TOKEN")
+bot.run(os.getenv("TOKEN"))

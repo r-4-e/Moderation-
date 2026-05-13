@@ -3,6 +3,11 @@ import random
 import os
 import discord
 from discord.ext import commands
+from dotenv import load_dotenv
+
+# ----------------- Load .env ----------------- #
+load_dotenv()
+TOKEN = os.getenv("TOKEN")
 
 # ----------------- Setup Bot ----------------- #
 intents = discord.Intents.default()
@@ -11,6 +16,7 @@ intents.messages = True
 intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
+
 
 # ----------------- Info Config ----------------- #
 MAX_MESSAGES = 141       # messages per channel
